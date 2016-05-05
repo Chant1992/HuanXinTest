@@ -15,7 +15,6 @@
 		1906E5391CB1618D00FB93D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1906E5371CB1618D00FB93D5 /* LaunchScreen.storyboard */; };
 		1906E5441CB1618D00FB93D5 /* testhuanxinTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1906E5431CB1618D00FB93D5 /* testhuanxinTests.m */; };
 		1906E54F1CB1618D00FB93D5 /* testhuanxinUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1906E54E1CB1618D00FB93D5 /* testhuanxinUITests.m */; };
-		1906E5861CB1678700FB93D5 /* libHyphenateFullSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1906E5841CB1678700FB93D5 /* libHyphenateFullSDK.a */; };
 		1906E5891CB168B400FB93D5 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1906E5881CB168B400FB93D5 /* CoreMedia.framework */; };
 		1906E58B1CB168BF00FB93D5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1906E58A1CB168BF00FB93D5 /* AudioToolbox.framework */; };
 		1906E58D1CB168C600FB93D5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1906E58C1CB168C600FB93D5 /* AVFoundation.framework */; };
@@ -118,7 +117,6 @@
 		1906E5801CB1678700FB93D5 /* IEMChatroomManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IEMChatroomManager.h; sourceTree = "<group>"; };
 		1906E5811CB1678700FB93D5 /* IEMContactManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IEMContactManager.h; sourceTree = "<group>"; };
 		1906E5821CB1678700FB93D5 /* IEMGroupManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IEMGroupManager.h; sourceTree = "<group>"; };
-		1906E5841CB1678700FB93D5 /* libHyphenateFullSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libHyphenateFullSDK.a; sourceTree = "<group>"; };
 		1906E5881CB168B400FB93D5 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		1906E58A1CB168BF00FB93D5 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		1906E58C1CB168C600FB93D5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -184,7 +182,6 @@
 				1906E58D1CB168C600FB93D5 /* AVFoundation.framework in Frameworks */,
 				1906E58B1CB168BF00FB93D5 /* AudioToolbox.framework in Frameworks */,
 				1906E5891CB168B400FB93D5 /* CoreMedia.framework in Frameworks */,
-				1906E5861CB1678700FB93D5 /* libHyphenateFullSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,7 +339,6 @@
 			isa = PBXGroup;
 			children = (
 				1906E59E1CB16A2000FB93D5 /* libHyphenateSDK.a */,
-				1906E5841CB1678700FB93D5 /* libHyphenateFullSDK.a */,
 			);
 			path = lib;
 			sourceTree = "<group>";
@@ -771,6 +767,8 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/testhuanxin/HyphenateSDK/lib",
+					"$(PROJECT_DIR)/testhuanxin/HyphenateSDK/EaseUI/EMUIKit/3rdparty/DeviceHelper/VoiceConvert/opencore-amrnb",
+					"$(PROJECT_DIR)/testhuanxin/HyphenateSDK/EaseUI/EMUIKit/3rdparty/DeviceHelper/VoiceConvert/opencore-amrwb",
 				);
 				OTHER_LDFLAGS = (
 					"-force_load",
@@ -795,6 +793,8 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/testhuanxin/HyphenateSDK/lib",
+					"$(PROJECT_DIR)/testhuanxin/HyphenateSDK/EaseUI/EMUIKit/3rdparty/DeviceHelper/VoiceConvert/opencore-amrnb",
+					"$(PROJECT_DIR)/testhuanxin/HyphenateSDK/EaseUI/EMUIKit/3rdparty/DeviceHelper/VoiceConvert/opencore-amrwb",
 				);
 				OTHER_LDFLAGS = (
 					"-force_load",

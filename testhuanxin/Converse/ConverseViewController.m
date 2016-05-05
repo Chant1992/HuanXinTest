@@ -8,14 +8,37 @@
 
 #import "ConverseViewController.h"
 
-@interface ConverseViewController ()<EMClientDelegate,EMContactManagerDelegate,UIAlertViewDelegate>
+@interface ConverseViewController ()<EMClientDelegate,EMContactManagerDelegate,EMChatManagerDelegate,UIAlertViewDelegate,UITableViewDelegate,UITableViewDataSource>
 
 /** 好友的名称 */
 @property (nonatomic, copy) NSString *buddyUsername;
 
+@property (nonatomic , strong) NSArray *conversations;
+
+@property (nonatomic , strong) NSMutableArray *amsgArray;
+
+@property (nonatomic , weak) UITableView *tableview;
+
 @end
 
 @implementation ConverseViewController
+
+- (NSArray *)conversations
+{
+    if (!_conversations) {
+        _conversations = [NSArray array];
+    }
+    return _conversations;
+}
+
+- (NSMutableArray *)amsgArray
+{
+    if (!_amsgArray) {
+        _amsgArray = [NSMutableArray array];
+    }
+    return _amsgArray;
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,7 +47,120 @@
     [[EMClient sharedClient] addDelegate:self delegateQueue:nil];
     //联系人模块代理
     [[EMClient sharedClient].contactManager addDelegate:self delegateQueue:nil];
+    //消息，聊天
+    [[EMClient sharedClient].chatManager addDelegate:self delegateQueue:nil];
+    
+    [self loadConversations];
+    
+    
+    UITableView *tableview = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+    tableview.delegate = self;
+    tableview.dataSource = self;
+    [self.view addSubview:tableview];
+    self.tableview = tableview;
 }
+
+
+-(void)loadConversations{
+    //获取历史会话记录
+    NSArray *conversations = [[EMClient sharedClient].chatManager getAllConversations];
+    if (conversations.count == 0) {
+        conversations =  [[EMClient sharedClient].chatManager loadAllConversationsFromDB];
+    }
+    NSLog(@"zzzzzzz %@",conversations);
+    self.conversations = conversations;
+    //显示总的未读数
+    [self showTabBarBadge];
+}
+
+
+- (void)showTabBarBadge{
+    NSInteger totalUnreadCount = 0;
+    for (EMConversation *conversation in self.conversations) {
+        totalUnreadCount += [conversation unreadMessagesCount];
+    }
+    NSLog(@"未读消息总数:%ld",(long)totalUnreadCount);
+    self.navigationController.tabBarItem.badgeValue = [NSString stringWithFormat:@"%ld",totalUnreadCount];
+    
+    [self.tableview reloadData];
+}
+
+#warning 不知道为啥不会调用
+//#pragma mark 历史会话列表更新
+//- (void)didUpdateConversationList:(NSArray *)conversationList{
+//    //给数据源重新赋值
+//    self.conversations = conversationList;
+//    //显示总的未读数
+//    [self showTabBarBadge];
+//}
+
+#pragma mark - 接收到消息
+- (void)didReceiveMessages:(NSArray *)aMessages
+{
+    [self loadConversations];
+}
+
+
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.conversations.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *ID = @"msgcell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
+    }
+    
+    EMConversation *conversaion = self.conversations[indexPath.row];
+    cell.imageView.image = [UIImage imageNamed:@"1"];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@  %d   %lld",conversaion.latestMessage.from,[conversaion unreadMessagesCount],conversaion.latestMessage.timestamp];
+//    ,[conversaion unreadMessagesCount]
+    // 获取消息体
+    id body = conversaion.latestMessage.body;
+    if ([body isKindOfClass:[EMTextMessageBody class]]) {
+        EMTextMessageBody *textBody = body;
+        cell.detailTextLabel.text = textBody.text;
+    }else if ([body isKindOfClass:[EMVoiceMessageBody class]]){
+        cell.detailTextLabel.text = @"[语音]";
+    }else if([body isKindOfClass:[EMImageMessageBody class]]){
+        cell.detailTextLabel.text = @"[图片]";
+    }else{
+        cell.detailTextLabel.text = @"";
+    }
+    cell.detailTextLabel.textColor = [UIColor grayColor];
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 60;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        
+        EMConversation *conversaion = self.conversations[indexPath.row];
+        NSString *converstationID = conversaion.conversationId;
+        // 删除会话
+        [[EMClient sharedClient].chatManager deleteConversation:converstationID deleteMessages:YES];
+        [self loadConversations];
+    }
+}
+
+//修改编辑按钮文字
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return @"删除";
+}
+
+
+
 
 #pragma mark - 监听网络状态
 - (void)didConnectionStateChanged:(EMConnectionState)connectionState{
@@ -107,6 +243,7 @@
 {
     [[EMClient sharedClient] removeDelegate:self];
     [[EMClient sharedClient].contactManager removeDelegate:self];
+    [[EMClient sharedClient].chatManager removeDelegate:self];
 }
 
 @end

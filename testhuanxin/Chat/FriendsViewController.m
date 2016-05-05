@@ -10,6 +10,7 @@
 #import "UIBarButtonItem+gyh.h"
 #import "AddFriendViewController.h"
 
+
 @interface FriendsViewController ()<EMClientDelegate,EMContactManagerDelegate,UITableViewDelegate,UITableViewDataSource>
 {
     UITableView *tableview;
@@ -148,6 +149,13 @@
     
     return cell;
 }
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+
+}
+
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
