@@ -11,7 +11,7 @@
 ![image](https://raw.githubusercontent.com/gaoyuhang/HuanXinTest/master/photo/converse.png)
 ###添加好友，同意请求
 ![image](https://raw.githubusercontent.com/gaoyuhang/HuanXinTest/master/photo/add.png)
-![image](https://raw.githubusercontent.com/gaoyuhang/HuanXinTest/master/photo/add1.png)
+![image](https://raw.githubusercontent.com/gaoyuhang/HuanXinTest/master/photo/add1.PNG)
 ###联系人
 ![image](https://raw.githubusercontent.com/gaoyuhang/HuanxinTest/master/photo/friend.png)
 ###聊天页面
