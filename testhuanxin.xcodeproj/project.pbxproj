@@ -29,8 +29,16 @@
 		1906E59F1CB16A2000FB93D5 /* libHyphenateSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1906E59E1CB16A2000FB93D5 /* libHyphenateSDK.a */; };
 		19650D1E1CD9ECF700A8CC81 /* AddFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19650D1D1CD9ECF700A8CC81 /* AddFriendViewController.m */; };
 		19650D211CD9F28200A8CC81 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19650D201CD9F28200A8CC81 /* FriendsViewController.m */; };
+		198977531CDBAA0000F0E8DF /* BadgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 198977521CDBAA0000F0E8DF /* BadgeButton.m */; };
+		198977561CDC1AC000F0E8DF /* GYHTimeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 198977551CDC1AC000F0E8DF /* GYHTimeTool.m */; };
+		198977681CDC1CBF00F0E8DF /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 198977591CDC1CBF00F0E8DF /* ChatViewController.m */; };
+		198977691CDC1CBF00F0E8DF /* HyperlinksButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1989775C1CDC1CBF00F0E8DF /* HyperlinksButton.m */; };
+		1989776A1CDC1CBF00F0E8DF /* AddView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1989775F1CDC1CBF00F0E8DF /* AddView.m */; };
+		1989776B1CDC1CBF00F0E8DF /* AddViewButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 198977611CDC1CBF00F0E8DF /* AddViewButton.m */; };
+		1989776C1CDC1CBF00F0E8DF /* MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 198977631CDC1CBF00F0E8DF /* MessageCell.m */; };
+		1989776D1CDC1CBF00F0E8DF /* MessageImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 198977651CDC1CBF00F0E8DF /* MessageImageCell.m */; };
+		1989776E1CDC1CBF00F0E8DF /* MessageVideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 198977671CDC1CBF00F0E8DF /* MessageVideoCell.m */; };
 		198BB56B1CC3AE4300BCF62C /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 198BB56A1CC3AE4300BCF62C /* LoginViewController.m */; };
-		198BB56E1CC3AE4F00BCF62C /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 198BB56D1CC3AE4F00BCF62C /* ChatViewController.m */; };
 		198BB5711CC3AE5900BCF62C /* ConverseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 198BB5701CC3AE5900BCF62C /* ConverseViewController.m */; };
 		198BB5751CC3AECE00BCF62C /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 198BB5741CC3AECE00BCF62C /* SettingViewController.m */; };
 		1999F52A1CC258230062CBD5 /* MBProgressHUD+gyh.m in Sources */ = {isa = PBXBuildFile; fileRef = 1999F5261CC258230062CBD5 /* MBProgressHUD+gyh.m */; };
@@ -134,10 +142,26 @@
 		19650D1F1CD9F28200A8CC81 /* FriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsViewController.h; sourceTree = "<group>"; };
 		19650D201CD9F28200A8CC81 /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsViewController.m; sourceTree = "<group>"; };
 		1986C9EC1CB3CAD000D40918 /* texthuanxin.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = texthuanxin.pch; sourceTree = "<group>"; };
+		198977511CDBAA0000F0E8DF /* BadgeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BadgeButton.h; sourceTree = "<group>"; };
+		198977521CDBAA0000F0E8DF /* BadgeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgeButton.m; sourceTree = "<group>"; };
+		198977541CDC1AC000F0E8DF /* GYHTimeTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYHTimeTool.h; sourceTree = "<group>"; };
+		198977551CDC1AC000F0E8DF /* GYHTimeTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYHTimeTool.m; sourceTree = "<group>"; };
+		198977581CDC1CBF00F0E8DF /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
+		198977591CDC1CBF00F0E8DF /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
+		1989775B1CDC1CBF00F0E8DF /* HyperlinksButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyperlinksButton.h; sourceTree = "<group>"; };
+		1989775C1CDC1CBF00F0E8DF /* HyperlinksButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyperlinksButton.m; sourceTree = "<group>"; };
+		1989775E1CDC1CBF00F0E8DF /* AddView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddView.h; sourceTree = "<group>"; };
+		1989775F1CDC1CBF00F0E8DF /* AddView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddView.m; sourceTree = "<group>"; };
+		198977601CDC1CBF00F0E8DF /* AddViewButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddViewButton.h; sourceTree = "<group>"; };
+		198977611CDC1CBF00F0E8DF /* AddViewButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddViewButton.m; sourceTree = "<group>"; };
+		198977621CDC1CBF00F0E8DF /* MessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageCell.h; sourceTree = "<group>"; };
+		198977631CDC1CBF00F0E8DF /* MessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageCell.m; sourceTree = "<group>"; };
+		198977641CDC1CBF00F0E8DF /* MessageImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageImageCell.h; sourceTree = "<group>"; };
+		198977651CDC1CBF00F0E8DF /* MessageImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageImageCell.m; sourceTree = "<group>"; };
+		198977661CDC1CBF00F0E8DF /* MessageVideoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageVideoCell.h; sourceTree = "<group>"; };
+		198977671CDC1CBF00F0E8DF /* MessageVideoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageVideoCell.m; sourceTree = "<group>"; };
 		198BB5691CC3AE4300BCF62C /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		198BB56A1CC3AE4300BCF62C /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		198BB56C1CC3AE4F00BCF62C /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
-		198BB56D1CC3AE4F00BCF62C /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
 		198BB56F1CC3AE5900BCF62C /* ConverseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConverseViewController.h; sourceTree = "<group>"; };
 		198BB5701CC3AE5900BCF62C /* ConverseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConverseViewController.m; sourceTree = "<group>"; };
 		198BB5731CC3AECE00BCF62C /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
@@ -361,6 +385,43 @@
 			name = FrameWork;
 			sourceTree = "<group>";
 		};
+		198977571CDC1CBF00F0E8DF /* 聊天 */ = {
+			isa = PBXGroup;
+			children = (
+				198977581CDC1CBF00F0E8DF /* ChatViewController.h */,
+				198977591CDC1CBF00F0E8DF /* ChatViewController.m */,
+				1989775A1CDC1CBF00F0E8DF /* Model */,
+				1989775D1CDC1CBF00F0E8DF /* View */,
+			);
+			path = "聊天";
+			sourceTree = "<group>";
+		};
+		1989775A1CDC1CBF00F0E8DF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1989775B1CDC1CBF00F0E8DF /* HyperlinksButton.h */,
+				1989775C1CDC1CBF00F0E8DF /* HyperlinksButton.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1989775D1CDC1CBF00F0E8DF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1989775E1CDC1CBF00F0E8DF /* AddView.h */,
+				1989775F1CDC1CBF00F0E8DF /* AddView.m */,
+				198977601CDC1CBF00F0E8DF /* AddViewButton.h */,
+				198977611CDC1CBF00F0E8DF /* AddViewButton.m */,
+				198977621CDC1CBF00F0E8DF /* MessageCell.h */,
+				198977631CDC1CBF00F0E8DF /* MessageCell.m */,
+				198977641CDC1CBF00F0E8DF /* MessageImageCell.h */,
+				198977651CDC1CBF00F0E8DF /* MessageImageCell.m */,
+				198977661CDC1CBF00F0E8DF /* MessageVideoCell.h */,
+				198977671CDC1CBF00F0E8DF /* MessageVideoCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		198BB5721CC3AEB000BCF62C /* Setting */ = {
 			isa = PBXGroup;
 			children = (
@@ -382,8 +443,7 @@
 		1999F5211CC257180062CBD5 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
-				198BB56C1CC3AE4F00BCF62C /* ChatViewController.h */,
-				198BB56D1CC3AE4F00BCF62C /* ChatViewController.m */,
+				198977571CDC1CBF00F0E8DF /* 聊天 */,
 				19650D1C1CD9ECF700A8CC81 /* AddFriendViewController.h */,
 				19650D1D1CD9ECF700A8CC81 /* AddFriendViewController.m */,
 				19650D1F1CD9F28200A8CC81 /* FriendsViewController.h */,
@@ -439,6 +499,8 @@
 			children = (
 				19AA0D081CD5B40200A5AEE5 /* TabbarButton.h */,
 				19AA0D091CD5B40200A5AEE5 /* TabbarButton.m */,
+				198977511CDBAA0000F0E8DF /* BadgeButton.h */,
+				198977521CDBAA0000F0E8DF /* BadgeButton.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -463,6 +525,8 @@
 				19AA0D1C1CD5B48D00A5AEE5 /* UIImage+Extension.m */,
 				19AA0D1D1CD5B48D00A5AEE5 /* UIView+Extension.h */,
 				19AA0D1E1CD5B48D00A5AEE5 /* UIView+Extension.m */,
+				198977541CDC1AC000F0E8DF /* GYHTimeTool.h */,
+				198977551CDC1AC000F0E8DF /* GYHTimeTool.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -598,10 +662,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1989776A1CDC1CBF00F0E8DF /* AddView.m in Sources */,
 				1906E5311CB1618D00FB93D5 /* ViewController.m in Sources */,
 				1906E52E1CB1618D00FB93D5 /* AppDelegate.m in Sources */,
 				19650D211CD9F28200A8CC81 /* FriendsViewController.m in Sources */,
 				198BB56B1CC3AE4300BCF62C /* LoginViewController.m in Sources */,
+				198977681CDC1CBF00F0E8DF /* ChatViewController.m in Sources */,
+				1989776D1CDC1CBF00F0E8DF /* MessageImageCell.m in Sources */,
 				19AA0D111CD5B40200A5AEE5 /* GYHNavigationController.m in Sources */,
 				19AA0D201CD5B48D00A5AEE5 /* UIBarButtonItem+gyh.m in Sources */,
 				19AA0D221CD5B48D00A5AEE5 /* UIView+Extension.m in Sources */,
@@ -611,8 +678,13 @@
 				19AA0D151CD5B41B00A5AEE5 /* GYHTabBarController.m in Sources */,
 				19AA0D101CD5B40200A5AEE5 /* TabbarButton.m in Sources */,
 				1999F52A1CC258230062CBD5 /* MBProgressHUD+gyh.m in Sources */,
+				1989776C1CDC1CBF00F0E8DF /* MessageCell.m in Sources */,
+				1989776E1CDC1CBF00F0E8DF /* MessageVideoCell.m in Sources */,
+				1989776B1CDC1CBF00F0E8DF /* AddViewButton.m in Sources */,
 				198BB5751CC3AECE00BCF62C /* SettingViewController.m in Sources */,
-				198BB56E1CC3AE4F00BCF62C /* ChatViewController.m in Sources */,
+				198977691CDC1CBF00F0E8DF /* HyperlinksButton.m in Sources */,
+				198977561CDC1AC000F0E8DF /* GYHTimeTool.m in Sources */,
+				198977531CDBAA0000F0E8DF /* BadgeButton.m in Sources */,
 				1906E52B1CB1618D00FB93D5 /* main.m in Sources */,
 				198BB5711CC3AE5900BCF62C /* ConverseViewController.m in Sources */,
 				19650D1E1CD9ECF700A8CC81 /* AddFriendViewController.m in Sources */,

@@ -9,6 +9,7 @@
 #import "FriendsViewController.h"
 #import "UIBarButtonItem+gyh.h"
 #import "AddFriendViewController.h"
+#import "ChatViewController.h"
 
 
 @interface FriendsViewController ()<EMClientDelegate,EMContactManagerDelegate,UITableViewDelegate,UITableViewDataSource>
@@ -141,7 +142,6 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
-        
     }
 
     cell.imageView.image = [UIImage imageNamed:@"1"];
@@ -153,7 +153,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    ChatViewController *chatVC = [[ChatViewController alloc]init];
+    UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    chatVC = [story instantiateViewControllerWithIdentifier:@"ChatViewControl"];
+    chatVC.fromname = self.friendArr[indexPath.row];
+    [self.navigationController pushViewController:chatVC animated:YES];
 }
 
 

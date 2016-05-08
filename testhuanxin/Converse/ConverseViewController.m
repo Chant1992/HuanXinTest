@@ -7,6 +7,7 @@
 //
 
 #import "ConverseViewController.h"
+#import "GYHTimeTool.h"
 
 @interface ConverseViewController ()<EMClientDelegate,EMContactManagerDelegate,EMChatManagerDelegate,UIAlertViewDelegate,UITableViewDelegate,UITableViewDataSource>
 
@@ -80,8 +81,7 @@
         totalUnreadCount += [conversation unreadMessagesCount];
     }
     NSLog(@"未读消息总数:%ld",(long)totalUnreadCount);
-    self.navigationController.tabBarItem.badgeValue = [NSString stringWithFormat:@"%ld",totalUnreadCount];
-    
+    self.tabBarItem.badgeValue = [NSString stringWithFormat:@"%ld",totalUnreadCount];
     [self.tableview reloadData];
 }
 
@@ -118,7 +118,7 @@
     
     EMConversation *conversaion = self.conversations[indexPath.row];
     cell.imageView.image = [UIImage imageNamed:@"1"];
-    cell.textLabel.text = [NSString stringWithFormat:@"%@  %d   %lld",conversaion.latestMessage.from,[conversaion unreadMessagesCount],conversaion.latestMessage.timestamp];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@  %d   %@",conversaion.latestMessage.from,[conversaion unreadMessagesCount],[GYHTimeTool timeStr:conversaion.latestMessage.timestamp]];
 //    ,[conversaion unreadMessagesCount]
     // 获取消息体
     id body = conversaion.latestMessage.body;
@@ -135,6 +135,14 @@
     cell.detailTextLabel.textColor = [UIColor grayColor];
     return cell;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+}
+
+
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
