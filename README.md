@@ -8,18 +8,22 @@
 
 ##Photo
 ###会话截图
-现在只是初步展示出信息，之后会自定义cell
+现在只是初步展示出信息，之后会自定义cell<br>
 ![image](https://raw.githubusercontent.com/gaoyuhang/HuanXinTest/master/photo/converse.png)
+---
 ###添加好友，同意请求
 ![image](https://raw.githubusercontent.com/gaoyuhang/HuanXinTest/master/photo/add.png)
 ![image](https://raw.githubusercontent.com/gaoyuhang/HuanXinTest/master/photo/add1.PNG)
+---
 ###联系人
 ![image](https://raw.githubusercontent.com/gaoyuhang/HuanxinTest/master/photo/friend.png)
+---
 ###聊天页面
-目前初步写只是实现了文字发送，马上就会完善支持文字，图片，语音，位置信息等
+目前初步写只是实现了文字发送，马上就会完善支持文字，图片，语音，位置信息等<br>
 ![image](https://raw.githubusercontent.com/gaoyuhang/HuanxinTest/master/photo/chat.png)
+---
 ###设置界面
-在这里只是展示当前登录的用户。点击红色按钮可实现注销功能
+在这里只是展示当前登录的用户。点击红色按钮可实现注销功能<br>
 ![image](https://raw.githubusercontent.com/gaoyuhang/HuanxinTest/master/photo/setting.png)
 
 
