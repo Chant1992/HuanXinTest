@@ -53,6 +53,7 @@
     btn.backgroundColor = [UIColor redColor];
     [btn setTitle:@"注册" forState:UIControlStateNormal];
     [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [btn setBackgroundImage:[UIColor blackColor] forState:UIControlStateDisabled];
     [btn addTarget:self action:@selector(registe) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn];
     
